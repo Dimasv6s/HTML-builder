@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+fs.writeFile(path.resolve(__dirname, 'text.txt'), '', (error) => {
+  if (error) console.log(error);
+});
+
 console.log('Введите текст');
 
 process.stdin.on('data', (data) => {
