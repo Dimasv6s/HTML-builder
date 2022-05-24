@@ -23,6 +23,7 @@ const path = require('path');
   }
 
   const assets = await fs.readdir(path.join(__dirname, 'assets'));
+  await fs.rm(path.join(__dirname, 'project-dist', 'assets'), {recursive: true, force: true});
   await fs.mkdir(path.join(__dirname, 'project-dist', 'assets'), {recursive: true});
   for (const dir of assets) {
     await fs.mkdir(path.join(__dirname, 'project-dist', 'assets', dir), {recursive: true});
